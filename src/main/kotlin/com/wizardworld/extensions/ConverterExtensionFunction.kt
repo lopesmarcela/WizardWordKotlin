@@ -1,11 +1,11 @@
 package com.wizardworld.extensions
 
 import com.wizardworld.controllers.request.spell.PostSpellRequest
-import com.wizardworld.models.spell.Spell
+import com.wizardworld.models.spell.SpellModel
 
 
-fun PostSpellRequest.toSpell():Spell{
-    return Spell(
+fun PostSpellRequest.toSpell():SpellModel{
+    return SpellModel(
         name = this.name,
         effect = this.effect,
         canBeVerbal = this.canBeVerbal,

@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "spells")
-data class Spell(
+data class SpellModel(
     @Id
     @GeneratedValue
     val id: UUID? = null,
