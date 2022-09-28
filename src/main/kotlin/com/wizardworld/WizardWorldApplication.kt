@@ -1,0 +1,11 @@
+package com.wizardworld
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
+@SpringBootApplication
+class WizardWorldApplication
+
+fun main(args: Array<String>) {
+	runApplication<WizardWorldApplication>(*args)
+}
