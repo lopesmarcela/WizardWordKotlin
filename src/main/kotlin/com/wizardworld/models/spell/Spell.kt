@@ -1,12 +1,28 @@
 package com.wizardworld.models.spell
 
+import com.fasterxml.jackson.annotation.JsonAlias
 import java.util.*
-data class Spell (
-    private val id: UUID,
-    private val name: String,
-    private val effect: String,
-    private val canBeVerbal: Boolean,
-    private val type: SpellType,
-    private val light: SpellLight,
-    private val creator: String
+import javax.persistence.*
+
+@Entity
+@Table(name = "spells")
+data class Spell(
+    @Id
+    @GeneratedValue
+    val id: UUID? = null,
+    @Column
+    val name: String,
+    @Column
+    val effect: String,
+    @Column
+    @JsonAlias("can_be_verbal")
+    val canBeVerbal: Boolean,
+    @Column
+    @Enumerated(EnumType.STRING)
+    val type: SpellType,
+    @Column
+    @Enumerated(EnumType.STRING)
+    val light: SpellLight,
+    @Column
+    val creator: String
 )
