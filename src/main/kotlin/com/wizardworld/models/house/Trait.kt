@@ -13,7 +13,7 @@ data class Trait (
     @Column
     @Enumerated(EnumType.STRING)
     val name: TraitName,
-    @Column
-    @JsonAlias("house_id")
-    val houseId: UUID? = null
+    @ManyToOne
+    @JoinColumn(name="house_id")
+    val house: HouseModel? = null
 )

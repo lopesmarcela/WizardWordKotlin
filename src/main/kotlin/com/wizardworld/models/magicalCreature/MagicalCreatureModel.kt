@@ -21,8 +21,6 @@ data class MagicalCreatureModel (
     @Column
     @JsonAlias("danger_level")
     val dangerLevel:CreatureDangerLevel,
-    @OneToMany(fetch = FetchType.LAZY,cascade = arrayOf(CascadeType.ALL))
-    val creatureRelations: List<CreatureRelation>,
     @Column
     @JsonAlias("native_to")
     val nativeTo: String

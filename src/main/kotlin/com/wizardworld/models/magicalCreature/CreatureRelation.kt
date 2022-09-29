@@ -6,6 +6,8 @@ import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
@@ -14,7 +16,7 @@ data class CreatureRelation (
     @Id
     @GeneratedValue
     val id: UUID,
-    @Column
-    @JsonAlias("creature_id")
-    val creatureId: UUID,
+    @ManyToOne
+    @JoinColumn(name = "creature_id")
+    val creature: MagicalCreatureModel? = null,
 )

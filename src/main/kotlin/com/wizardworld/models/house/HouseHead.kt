@@ -16,7 +16,7 @@ data class HouseHead (
      @Column
      @JsonAlias("last_name")
      val lastName: String,
-     @Column
-     @JsonAlias("house_id")
-     val houseId: UUID? = null
+     @ManyToOne
+     @JoinColumn(name="house_id")
+     val house: HouseModel? = null
 )
