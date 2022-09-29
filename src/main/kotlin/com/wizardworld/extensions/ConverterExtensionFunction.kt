@@ -50,13 +50,14 @@ fun PostHouseHeadRequest.toHouseHead(house: HouseModel): HouseHead{
     )
 }
 
-fun PostMagicalCreatureRequest.toMagicalCreature(): MagicalCreatureModel{
+fun PostMagicalCreatureRequest.toMagicalCreature(relatedCreatures: List<MagicalCreatureModel>?): MagicalCreatureModel{
     return MagicalCreatureModel(
         name = this.name,
         description = this.description,
         classification = this.classification,
         status = this.status,
         dangerLevel = this.dangerLevel,
-        nativeTo = this.nativeTo
+        nativeTo = this.nativeTo,
+        relatedCreatures = relatedCreatures
     )
 }

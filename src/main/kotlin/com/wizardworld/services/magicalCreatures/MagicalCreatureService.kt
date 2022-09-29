@@ -18,4 +18,8 @@ class MagicalCreatureService(
 
     fun findById(id: UUID): MagicalCreatureModel =
         magicalCreatureRepository.findById(id).orElseThrow()
+
+    fun findAllById(relatedCreaturesIds: List<UUID>?): MutableIterable<MagicalCreatureModel> {
+        return magicalCreatureRepository.findAllById(relatedCreaturesIds!!.toList())
+    }
 }

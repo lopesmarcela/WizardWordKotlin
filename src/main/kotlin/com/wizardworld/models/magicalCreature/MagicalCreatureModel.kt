@@ -24,4 +24,14 @@ data class MagicalCreatureModel (
     @Column
     @JsonAlias("native_to")
     val nativeTo: String,
+
+
+    @ManyToMany(cascade = [CascadeType.ALL])
+    @JoinTable(
+        name = "related_creatures",
+        joinColumns = [JoinColumn(name = "creature_id")],
+        inverseJoinColumns = [JoinColumn(name = "related_creatures_ids")],
+    )
+    @Column(nullable = true)
+    val relatedCreatures: List<MagicalCreatureModel>? = null
 )

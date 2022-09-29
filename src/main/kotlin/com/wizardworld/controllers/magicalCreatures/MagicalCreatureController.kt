@@ -22,7 +22,11 @@ class MagicalCreatureController(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create (@RequestBody magicalCreature: PostMagicalCreatureRequest){
-        magicalCreatureService.create(magicalCreature.toMagicalCreature())
+        var relatedCreatures: MutableIterable<MagicalCreatureModel>? = null
+        if(magicalCreature.relatedCreaturesIds != null) {
+            relatedCreatures = magicalCreatureService.findAllById(magicalCreature.relatedCreaturesIds)
+        }
+        magicalCreatureService.create(magicalCreature.toMagicalCreature(relatedCreatures?.toList()))
     }
 
     @GetMapping

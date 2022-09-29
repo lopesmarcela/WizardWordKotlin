@@ -14,5 +14,7 @@ data class PostMagicalCreatureRequest (
     @JsonAlias("danger_level")
     val dangerLevel: CreatureDangerLevel,
     @JsonAlias("native_to")
-    val nativeTo: String
+    val nativeTo: String,
+    @JsonAlias("related_creature_ids")
+    val relatedCreaturesIds: List<UUID>? = listOf(UUID.fromString(""))
 )
