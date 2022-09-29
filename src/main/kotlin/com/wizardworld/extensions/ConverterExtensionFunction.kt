@@ -5,11 +5,13 @@ import com.wizardworld.controllers.request.house.PostHouseRequest
 import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.magicalCreatures.PostMagicalCreatureRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
+import com.wizardworld.controllers.request.wizard.PostWizardRequest
 import com.wizardworld.models.house.HouseHead
 import com.wizardworld.models.house.HouseModel
 import com.wizardworld.models.house.Trait
 import com.wizardworld.models.magicalCreature.MagicalCreatureModel
 import com.wizardworld.models.spell.SpellModel
+import com.wizardworld.models.wizard.WizardModel
 
 
 fun PostSpellRequest.toSpell():SpellModel{
@@ -59,5 +61,12 @@ fun PostMagicalCreatureRequest.toMagicalCreature(relatedCreatures: List<MagicalC
         dangerLevel = this.dangerLevel,
         nativeTo = this.nativeTo,
         relatedCreatures = relatedCreatures
+    )
+}
+
+fun PostWizardRequest.toWizard(): WizardModel{
+    return WizardModel(
+        firstName = this.firstName,
+        lastName = this.lastName
     )
 }
