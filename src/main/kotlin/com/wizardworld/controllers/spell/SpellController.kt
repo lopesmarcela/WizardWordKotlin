@@ -1,9 +1,9 @@
-package com.wizardworld.controllers
+package com.wizardworld.controllers.spell
 
 import com.wizardworld.controllers.request.spell.PostSpellRequest
 import com.wizardworld.extensions.toSpell
 import com.wizardworld.models.spell.SpellModel
-import com.wizardworld.services.SpellService
+import com.wizardworld.services.spell.SpellService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -26,7 +26,7 @@ class SpellController(
         spellService.findAll()
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable id: UUID): Optional<SpellModel> =
+    fun findById(@PathVariable id: UUID): SpellModel =
         spellService.findById(id)
 
     @PostMapping

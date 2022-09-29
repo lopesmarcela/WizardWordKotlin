@@ -1,7 +1,7 @@
-package com.wizardworld.services
+package com.wizardworld.services.house
 
 import com.wizardworld.models.house.HouseModel
-import com.wizardworld.repositories.HouseRepository
+import com.wizardworld.repositories.house.HouseRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -18,7 +18,7 @@ class HouseService(
         return houseRepository.findAll()
     }
 
-    fun findById(id: UUID): Optional<HouseModel> {
-        return houseRepository.findById(id)
+    fun findById(id: UUID): HouseModel{
+        return houseRepository.findById(id).orElseThrow()
     }
 }

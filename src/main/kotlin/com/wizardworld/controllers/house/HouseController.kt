@@ -1,9 +1,9 @@
-package com.wizardworld.controllers
+package com.wizardworld.controllers.house
 
 import com.wizardworld.controllers.request.house.PostHouseRequest
 import com.wizardworld.extensions.toHouse
 import com.wizardworld.models.house.HouseModel
-import com.wizardworld.services.HouseService
+import com.wizardworld.services.house.HouseService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -31,7 +31,7 @@ class HouseController(
     }
 
     @GetMapping("/{id}")
-    fun findById (@PathVariable id: UUID): Optional<HouseModel>{
+    fun findById (@PathVariable id: UUID): HouseModel{
         return houseService.findById(id)
     }
 }

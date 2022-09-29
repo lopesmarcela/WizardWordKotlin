@@ -1,4 +1,4 @@
-package com.wizardworld.repositories
+package com.wizardworld.repositories.spell
 
 import com.wizardworld.models.spell.SpellModel
 import org.springframework.data.repository.CrudRepository

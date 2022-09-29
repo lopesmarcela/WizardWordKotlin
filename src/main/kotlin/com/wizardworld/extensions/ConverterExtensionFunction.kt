@@ -1,9 +1,10 @@
 package com.wizardworld.extensions
 
-import com.fasterxml.jackson.annotation.JsonAlias
 import com.wizardworld.controllers.request.house.PostHouseRequest
+import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
 import com.wizardworld.models.house.HouseModel
+import com.wizardworld.models.house.Trait
 import com.wizardworld.models.spell.SpellModel
 import java.util.*
 
@@ -28,5 +29,12 @@ fun PostHouseRequest.toHouse(): HouseModel {
         element = this.element,
         ghost = this.ghost,
         commonRoom = this.commonRoom,
+    )
+}
+
+fun PostTraitRequest.toTrait(house: HouseModel): Trait{
+    return Trait(
+        name = this.name,
+        house = house
     )
 }
