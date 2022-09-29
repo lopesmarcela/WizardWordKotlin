@@ -1,8 +1,10 @@
 package com.wizardworld.extensions
 
+import com.wizardworld.controllers.request.house.PostHouseHeadRequest
 import com.wizardworld.controllers.request.house.PostHouseRequest
 import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
+import com.wizardworld.models.house.HouseHead
 import com.wizardworld.models.house.HouseModel
 import com.wizardworld.models.house.Trait
 import com.wizardworld.models.spell.SpellModel
@@ -35,6 +37,14 @@ fun PostHouseRequest.toHouse(): HouseModel {
 fun PostTraitRequest.toTrait(house: HouseModel): Trait{
     return Trait(
         name = this.name,
+        house = house
+    )
+}
+
+fun PostHouseHeadRequest.toHouseHead(house: HouseModel): HouseHead{
+    return HouseHead(
+        firstName = this.firstName,
+        lastName = this.lastName,
         house = house
     )
 }
