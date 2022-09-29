@@ -18,4 +18,8 @@ class WizardService(
     fun create(wizard: WizardModel){
         wizardRepository.save(wizard)
     }
+
+    fun findAllById(wizardIds: List<UUID>): MutableIterable<WizardModel> {
+        return wizardRepository.findAllById(wizardIds)
+    }
 }

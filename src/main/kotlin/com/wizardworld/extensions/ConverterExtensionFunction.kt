@@ -1,5 +1,6 @@
 package com.wizardworld.extensions
 
+import com.wizardworld.controllers.request.elixir.PostElixirRequest
 import com.wizardworld.controllers.request.elixir.PostIngredientRequest
 import com.wizardworld.controllers.request.house.PostHouseHeadRequest
 import com.wizardworld.controllers.request.house.PostHouseRequest
@@ -7,6 +8,7 @@ import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.magicalCreatures.PostMagicalCreatureRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
 import com.wizardworld.controllers.request.wizard.PostWizardRequest
+import com.wizardworld.models.elixir.ElixirModel
 import com.wizardworld.models.elixir.Ingredient
 import com.wizardworld.models.house.HouseHead
 import com.wizardworld.models.house.HouseModel
@@ -76,5 +78,19 @@ fun PostWizardRequest.toWizard(): WizardModel{
 fun PostIngredientRequest.toIngredient(): Ingredient{
     return Ingredient(
         name = this.name,
+    )
+}
+
+fun PostElixirRequest.toElixir(ingredients: List<Ingredient>, wizards: List<WizardModel>):ElixirModel{
+    return ElixirModel(
+        name = this.name,
+        effect = this.effect,
+        sideEffects = this.sideEffects,
+        characteristics = this.characteristics,
+        time = this.time,
+        difficulty = this.difficulty,
+        manufacturer = this.manufacturer,
+        ingredients = ingredients,
+        inventors = wizards
     )
 }

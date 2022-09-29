@@ -15,7 +15,11 @@ class IngredientService(
     fun findById(id: UUID): Ingredient =
         ingredientRepository.findById(id).orElseThrow()
 
-    fun create(spell: Ingredient){
-        ingredientRepository.save(spell)
+    fun create(ingredient: Ingredient){
+        ingredientRepository.save(ingredient)
+    }
+
+    fun findAllById(ingredientIds: List<UUID>): MutableIterable<Ingredient> {
+        return ingredientRepository.findAllById(ingredientIds)
     }
 }
