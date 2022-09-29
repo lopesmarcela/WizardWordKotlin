@@ -9,7 +9,7 @@ import javax.persistence.*
 data class MagicalCreatureModel (
     @Id
     @GeneratedValue
-    val id : UUID,
+    val id : UUID? = null,
     @Column
     val name: String,
     @Column
@@ -23,5 +23,5 @@ data class MagicalCreatureModel (
     val dangerLevel:CreatureDangerLevel,
     @Column
     @JsonAlias("native_to")
-    val nativeTo: String
+    val nativeTo: String,
 )
