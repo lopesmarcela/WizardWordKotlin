@@ -1,11 +1,13 @@
 package com.wizardworld.extensions
 
+import com.wizardworld.controllers.request.elixir.PostIngredientRequest
 import com.wizardworld.controllers.request.house.PostHouseHeadRequest
 import com.wizardworld.controllers.request.house.PostHouseRequest
 import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.magicalCreatures.PostMagicalCreatureRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
 import com.wizardworld.controllers.request.wizard.PostWizardRequest
+import com.wizardworld.models.elixir.Ingredient
 import com.wizardworld.models.house.HouseHead
 import com.wizardworld.models.house.HouseModel
 import com.wizardworld.models.house.Trait
@@ -68,5 +70,11 @@ fun PostWizardRequest.toWizard(): WizardModel{
     return WizardModel(
         firstName = this.firstName,
         lastName = this.lastName
+    )
+}
+
+fun PostIngredientRequest.toIngredient(): Ingredient{
+    return Ingredient(
+        name = this.name,
     )
 }

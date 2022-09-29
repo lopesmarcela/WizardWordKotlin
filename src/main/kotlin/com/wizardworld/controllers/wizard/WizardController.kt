@@ -30,7 +30,7 @@ class WizardController(
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody spell: PostWizardRequest){
-        wizardService.create(spell.toWizard())
+    fun create(@RequestBody wizard: PostWizardRequest){
+        wizardService.create(wizard.toWizard())
     }
 }

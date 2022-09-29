@@ -15,7 +15,7 @@ class WizardService(
     fun findById(id: UUID): WizardModel =
         wizardRepository.findById(id).orElseThrow()
 
-    fun create(spell: WizardModel){
-        wizardRepository.save(spell)
+    fun create(wizard: WizardModel){
+        wizardRepository.save(wizard)
     }
 }
