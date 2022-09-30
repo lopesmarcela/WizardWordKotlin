@@ -6,7 +6,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: ${JDBC_DATASOURCE_URL}
+    url: jdbc:postgresql://localhost:5432/WizardWorld
+    username: postgres
+    password: 12345678
   jackson:
     default-property-inclusion: non_null
   mvc:
