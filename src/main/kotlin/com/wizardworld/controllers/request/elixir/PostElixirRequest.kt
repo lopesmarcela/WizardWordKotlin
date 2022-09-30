@@ -1,11 +1,8 @@
 package com.wizardworld.controllers.request.elixir
 
 import com.fasterxml.jackson.annotation.JsonAlias
-import com.wizardworld.models.elixir.ElixirDifficulty
-import com.wizardworld.models.elixir.Ingredient
-import com.wizardworld.models.wizard.WizardModel
+import com.wizardworld.models.enums.ElixirDifficulty
 import java.util.UUID
-import javax.persistence.*
 
 data class PostElixirRequest (
     val name: String,

@@ -1,9 +1,9 @@
 package com.wizardworld.controllers.request.magicalCreatures
 
 import com.fasterxml.jackson.annotation.JsonAlias
-import com.wizardworld.models.magicalCreature.CreatureClassificationByMinistryOfMagic
-import com.wizardworld.models.magicalCreature.CreatureDangerLevel
-import com.wizardworld.models.magicalCreature.CreatureStatus
+import com.wizardworld.models.enums.CreatureClassificationByMinistryOfMagic
+import com.wizardworld.models.enums.CreatureDangerLevel
+import com.wizardworld.models.enums.CreatureStatus
 import java.util.*
 
 data class PostMagicalCreatureRequest (

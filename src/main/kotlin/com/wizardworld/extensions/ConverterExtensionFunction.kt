@@ -8,17 +8,17 @@ import com.wizardworld.controllers.request.house.PostTraitRequest
 import com.wizardworld.controllers.request.magicalCreatures.PostMagicalCreatureRequest
 import com.wizardworld.controllers.request.spell.PostSpellRequest
 import com.wizardworld.controllers.request.wizard.PostWizardRequest
-import com.wizardworld.models.elixir.ElixirModel
-import com.wizardworld.models.elixir.Ingredient
-import com.wizardworld.models.house.HouseHead
-import com.wizardworld.models.house.HouseModel
-import com.wizardworld.models.house.Trait
-import com.wizardworld.models.magicalCreature.MagicalCreatureModel
-import com.wizardworld.models.spell.SpellModel
-import com.wizardworld.models.wizard.WizardModel
+import com.wizardworld.models.ElixirModel
+import com.wizardworld.models.Ingredient
+import com.wizardworld.models.HouseHead
+import com.wizardworld.models.HouseModel
+import com.wizardworld.models.Trait
+import com.wizardworld.models.MagicalCreatureModel
+import com.wizardworld.models.SpellModel
+import com.wizardworld.models.WizardModel
 
 
-fun PostSpellRequest.toSpell():SpellModel{
+fun PostSpellRequest.toSpell(): SpellModel {
     return SpellModel(
         name = this.name,
         effect = this.effect,
@@ -41,14 +41,14 @@ fun PostHouseRequest.toHouse(): HouseModel {
     )
 }
 
-fun PostTraitRequest.toTrait(house: HouseModel): Trait{
+fun PostTraitRequest.toTrait(house: HouseModel): Trait {
     return Trait(
         name = this.name,
         house = house
     )
 }
 
-fun PostHouseHeadRequest.toHouseHead(house: HouseModel): HouseHead{
+fun PostHouseHeadRequest.toHouseHead(house: HouseModel): HouseHead {
     return HouseHead(
         firstName = this.firstName,
         lastName = this.lastName,
@@ -56,7 +56,7 @@ fun PostHouseHeadRequest.toHouseHead(house: HouseModel): HouseHead{
     )
 }
 
-fun PostMagicalCreatureRequest.toMagicalCreature(relatedCreatures: List<MagicalCreatureModel>?): MagicalCreatureModel{
+fun PostMagicalCreatureRequest.toMagicalCreature(relatedCreatures: List<MagicalCreatureModel>?): MagicalCreatureModel {
     return MagicalCreatureModel(
         name = this.name,
         description = this.description,
@@ -68,20 +68,20 @@ fun PostMagicalCreatureRequest.toMagicalCreature(relatedCreatures: List<MagicalC
     )
 }
 
-fun PostWizardRequest.toWizard(): WizardModel{
+fun PostWizardRequest.toWizard(): WizardModel {
     return WizardModel(
         firstName = this.firstName,
         lastName = this.lastName
     )
 }
 
-fun PostIngredientRequest.toIngredient(): Ingredient{
+fun PostIngredientRequest.toIngredient(): Ingredient {
     return Ingredient(
         name = this.name,
     )
 }
 
-fun PostElixirRequest.toElixir(ingredients: List<Ingredient>, wizards: List<WizardModel>):ElixirModel{
+fun PostElixirRequest.toElixir(ingredients: List<Ingredient>, wizards: List<WizardModel>): ElixirModel {
     return ElixirModel(
         name = this.name,
         effect = this.effect,
