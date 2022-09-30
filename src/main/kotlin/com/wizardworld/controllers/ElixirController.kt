@@ -9,6 +9,7 @@ import com.wizardworld.services.ElixirService
 import com.wizardworld.services.IngredientService
 import com.wizardworld.services.WizardService
 import io.swagger.annotations.Api
+import io.swagger.annotations.ApiOperation
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
 
 @RestController
-@Api
+@Api(tags = ["","Elixir"])
 @RequestMapping("elixirs")
 class ElixirController(
     private val elixirService: ElixirService,
@@ -28,14 +29,17 @@ class ElixirController(
     private val wizardService: WizardService
 ) {
 
+    @ApiOperation("Retorna todas os elixires")
     @GetMapping
     fun findAll(): MutableIterable<ElixirModel> =
         elixirService.findAll()
 
+    @ApiOperation("Retorna um elixir por id")
     @GetMapping("/{id}")
     fun findById(@PathVariable id: UUID): ElixirModel =
         elixirService.findById(id)
 
+    @ApiOperation("Cria um elixir")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody elixir: PostElixirRequest){
