@@ -1,0 +1,6 @@
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:postgres://dsqrrilyyrlqpl:1bae2d2d7aaddaaff6e681ecd14dc01f0c8dd7b49cc2cc4c9d913dfea9fc3b0c@ec2-54-157-74-211.compute-1.amazonaws.com:5432/df8ms1hq5aq27o
+    username: dsqrrilyyrlqpl
+    password: 1bae2d2d7aaddaaff6e681ecd14dc01f0c8dd7b49cc2cc4c9d913dfea9fc3b0c

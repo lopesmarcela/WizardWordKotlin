@@ -1,19 +1,17 @@
 spring:
+  profiles:
+    active: dev
   jpa:
     database: POSTGRESQL
     show-sql: true
     generate-ddl: true
     hibernate:
       ddl-auto: update
-  datasource:
-    url: jdbc:postgresql://localhost:5432/WizardWorld
-    username: postgres
-    password: 12345678
   jackson:
     default-property-inclusion: non_null
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
 
 server:
   port: ${PORT:5000}
