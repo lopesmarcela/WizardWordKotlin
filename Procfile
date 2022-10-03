@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/WizardWorld-0.0.1-SNAPSHOT.jar
+web: java -jar build/libs/WizardWorld-0.0.1-SNAPSHOT.jar
