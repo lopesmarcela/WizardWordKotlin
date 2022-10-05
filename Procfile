@@ -1,1 +1,1 @@
-web:java -jar build/libs/WizardWorld-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+web: java -jar build/libs/WizardWorld-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT --spring.profiles.active=prod
