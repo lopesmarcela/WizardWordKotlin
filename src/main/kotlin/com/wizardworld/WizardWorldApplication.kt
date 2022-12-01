@@ -9,4 +9,5 @@ class WizardWorldApplication
 
 fun main(args: Array<String>) {
 	runApplication<WizardWorldApplication>(*args)
+
 }
