@@ -8,6 +8,7 @@
             <timestampFormat>dd.MM.yyyy' 'HH.mm:ss.SSS</timestampFormat>
             <appendLineSeparator>false</appendLineSeparator>
         </layout>
+        <filter class="com.wizardworld.controllers.SampleFilter" />
     </appender>
 
     <root level="info">
