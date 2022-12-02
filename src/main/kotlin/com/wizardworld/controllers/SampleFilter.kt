@@ -8,8 +8,6 @@ class SampleFilter: Filter<ILoggingEvent>() {
     override fun decide(event: ILoggingEvent): FilterReply {
         return if (event.message.contains("Spring")){
             FilterReply.ACCEPT
-        }else{
-            FilterReply.DENY
-        }
+        }else FilterReply.DENY
     }
 }

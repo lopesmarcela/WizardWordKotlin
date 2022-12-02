@@ -20,6 +20,7 @@ dependencies {
 	implementation("ch.qos.logback.contrib:logback-json-classic:0.1.5")
 	implementation("ch.qos.logback.contrib:logback-jackson:0.1.5")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation ("org.slf4j:slf4j-api:1.7.30")
 
 	implementation("io.springfox:springfox-swagger2:2.9.2")
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
